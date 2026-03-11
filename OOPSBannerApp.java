@@ -1,48 +1,54 @@
-public class OOPSBannerApp {
-	public static String[] getOpattern() {
-		return new String[] {
-		"   ***   ",
-		" **   ** ",
-		"**     **",
-		"**     **",
-		"**     **",
-		" **   ** ",
-		"   ***   "
-		};
-	}
+public class OOPSBannerApp{
 
-	public static String[] getPpattern() {
-		return new String[] {
-		"******** ",
-		"*       *",
-		"*       *",
-		"******** ",
-		"*        ",
-		"*        ",
-		"*        "
-		};
-	}
+    public static void main(String[] args) {
 
-	public static String[] getSpattern() {
-		return new String[] {
-		" ******* ",
-		"*        ",
-		"*        ",
-		" ******* ",
-		"        *",
-		"        *",
-		" ******* "
-		};
-	}
+        String word = "OOPS";
 
-	public static void main (String[] args) {
-		String[] Opattern = getOpattern();
-		String[] Ppattern = getPpattern();
-		String[] Spattern = getSpattern();
+        for (int line = 0; line < 7; line++) {
 
+            for (char ch : word.toCharArray()) {
 
-		for (int i = 0; i < Opattern.length; i++) {
-			System.out.println(Opattern[i] + "  " + Opattern[i] + "  " + Ppattern[i] + "  " + Spattern[i]);
-		}
-	}
+                if (ch == 'O') {
+                    String[] O = {
+                        " ***** ",
+                        "*     *",
+                        "*     *",
+                        "*     *",
+                        "*     *",
+                        "*     *",
+                        " ***** "
+                    };
+                    System.out.print(O[line] + "  ");
+                }
+
+                else if (ch == 'P') {
+                    String[] P = {
+                        "****** ",
+                        "*     *",
+                        "*     *",
+                        "****** ",
+                        "*      ",
+                        "*      ",
+                        "*      "
+                    };
+                    System.out.print(P[line] + "  ");
+                }
+
+                else if (ch == 'S') {
+                    String[] S = {
+                        " ***** ",
+                        "*      ",
+                        "*      ",
+                        " ***** ",
+                        "      *",
+                        "      *",
+                        " ***** "
+                    };
+                    System.out.print(S[line] + "  ");
+                }
+            }
+
+            System.out.println();
+        }
+    }
 }
