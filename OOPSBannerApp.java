@@ -1,53 +1,45 @@
+import java.util.*;
+
 public class OOPSBannerApp{
 
-    public static void main(String[] args) {
+    static Map<Character, String[]> map = new HashMap<>();
+    public static void main(String[] args){
+        map.put('O', new String[]{
+                " *** ",
+                "*   *",
+                "*   *",
+                "*   *",
+                " *** "
+        });
 
-        String word = "OOPS";
+        map.put('P', new String[]{
+                "**** ",
+                "*   *",
+                "**** ",
+                "*    ",
+                "*    "
+        });
 
-        for (int line = 0; line < 7; line++) {
+        map.put('S', new String[]{
+                " ****",
+                "*    ",
+                " *** ",
+                "    *",
+                "**** "
+        });
 
+        renderBanner("OOPS");
+    }
+
+    public static void renderBanner(String word) {
+
+        for (int row = 0; row < 5; row++) {
             for (char ch : word.toCharArray()) {
-
-                if (ch == 'O') {
-                    String[] O = {
-                        " ***** ",
-                        "*     *",
-                        "*     *",
-                        "*     *",
-                        "*     *",
-                        "*     *",
-                        " ***** "
-                    };
-                    System.out.print(O[line] + "  ");
-                }
-
-                else if (ch == 'P') {
-                    String[] P = {
-                        "****** ",
-                        "*     *",
-                        "*     *",
-                        "****** ",
-                        "*      ",
-                        "*      ",
-                        "*      "
-                    };
-                    System.out.print(P[line] + "  ");
-                }
-
-                else if (ch == 'S') {
-                    String[] S = {
-                        " ***** ",
-                        "*      ",
-                        "*      ",
-                        " ***** ",
-                        "      *",
-                        "      *",
-                        " ***** "
-                    };
-                    System.out.print(S[line] + "  ");
+                String[] pattern = map.get(ch);
+                if (pattern != null) {
+                    System.out.print(pattern[row] + "  ");
                 }
             }
-
             System.out.println();
         }
     }
